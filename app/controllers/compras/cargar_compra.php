@@ -28,11 +28,14 @@ $sql_compras = "SELECT *,
                 INNER JOIN tb_usuarios as us ON co.id_usuario = us.id_usuario
                 INNER JOIN tb_proveedores as prov ON co.id_proveedor = prov.id_proveedor
                 WHERE co.id_compra = '$id_compra_get' ";
+
 $query_compras = $pdo->prepare($sql_compras);
 $query_compras->execute();
 $compras_datos = $query_compras->fetchAll(PDO::FETCH_ASSOC);
 
 foreach ($compras_datos as $compras_dato) {
+    $id_producto = $compras_dato['id_producto'];
+    $id_compra = $compras_dato['id_compra'];
     $nro_compra = $compras_dato['nro_compra'];
     $codigo = $compras_dato['codigo'];
     $nombre = $compras_dato['nombre_producto'];
@@ -40,14 +43,15 @@ foreach ($compras_datos as $compras_dato) {
     $stock = $compras_dato['stock'];
     $stock_minimo = $compras_dato['stock_minimo'];
     $stock_maximo = $compras_dato['stock_maximo'];
-    $precio_compra = $compras_dato['precio_compra_producto'];
+    $precio_compra_producto = $compras_dato['precio_compra_producto'];
     $precio_venta = $compras_dato['precio_venta_producto'];
     $fecha_ingreso = $compras_dato['fecha_ingreso'];
     $usuario = $compras_dato['nombre_usuarios_producto'];
     $descripcion = $compras_dato['descripcion'];
     $img_producto = $compras_dato['imagen'];
 
-    $P_Nombre = $compras_dato['nombre_proveedor'];
+    $id_proveedor_tabla = $compras_dato['id_proveedor'];
+    $P_Nombre_tabla = $compras_dato['nombre_proveedor'];
     $P_Celular = $compras_dato['celular_proveedor'];
     $P_Telefono = $compras_dato['telefono_proveedor'];
     $P_Empresa = $compras_dato['empresa'];

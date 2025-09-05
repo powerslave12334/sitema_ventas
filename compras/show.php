@@ -80,7 +80,7 @@ include '../app/controllers/compras/cargar_compra.php';
                                                 </div>
                                                 <div class="col-md-4 form-group">
                                                     <label for="">Precio compra</label>
-                                                    <input type="text" id="precio_compra" class="form-control" value="<?php echo $precio_compra ?>" disabled>
+                                                    <input type="text" id="precio_compra" class="form-control" value="<?php echo $precio_compra_producto ?>" disabled>
                                                 </div>
                                                 <div class="col-md-4 form-group">
                                                     <label for="">Precio venta</label>
