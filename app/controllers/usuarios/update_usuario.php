@@ -17,7 +17,7 @@ include('../../config.php'); // Importa configuración principal y PDO
 $id_usuario_get = $_GET['id']; // ID del usuario a consultar
 
 /* --------------------------------------------------------------------------
-   🔹 Consulta SQL para obtener los datos del usuario
+   🔹 Consulta SQL para obtener los datos del usuario y su rol
    -------------------------------------------------------------------------- */
 $sql_usuarios = "
     SELECT 
@@ -31,7 +31,7 @@ $sql_usuarios = "
 ";
 
 $query_usuarios = $pdo->prepare($sql_usuarios);
-$query_usuarios->bindParam('id_usuario', $id_usuario_get);
+$query_usuarios->bindParam('id_usuario', $id_usuario_get, PDO::PARAM_INT);
 
 /* --------------------------------------------------------------------------
    🔹 Ejecución de la consulta
@@ -53,10 +53,10 @@ foreach ($usuarios_datos as $usuarios_dato) {
 }
 
 /* --------------------------------------------------------------------------
-   🔹 Buenas prácticas y notas
+   🔹 Buenas prácticas
    -------------------------------------------------------------------------- */
 /**
- * 1. Se recomienda usar bindParam para prevenir inyección SQL (modificado en esta versión).
+ * 1. Se usa bindParam para prevenir inyección SQL.
  * 2. Validar que $id_usuario_get sea un número válido antes de la consulta.
  * 3. Manejar el caso cuando la consulta no devuelve resultados para evitar errores en el frontend.
  */
