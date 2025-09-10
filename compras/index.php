@@ -287,7 +287,7 @@ if (isset($_SESSION['mensaje'])) {
                                                     <a href="update.php?id=<?php echo $id_compras; ?>"
                                                         class="btn btn-success"><i class="fa fa-pencil-alt"></i>Editar</a>
                                                     <br>
-                                                    <a href="delete.php?id=<?php echo $id_producto; ?>"
+                                                    <a href="delete.php?id=<?php echo $id_compras; ?>"
                                                         class="btn btn-danger"><i class="fa fa-pencil-alt"></i>Eliminar</a>
                                                 </div>
                                             </center>
