@@ -330,7 +330,12 @@ include('../app/controllers/compras/cargar_compra.php');
 
                                                 function eliminar() {
                                                     var url = "../app/controllers/compras/delete.php";
-                                                    $.get(url, { id_compra: id_compra, id_producto: id_producto, cantidad_compra: cantidad_compra, stock_actual: stock_actual }, function (datos) {
+                                                    $.get(url, {
+                                                        id_compra: id_compra,
+                                                        id_producto: id_producto,
+                                                        cantidad_compra: cantidad_compra,
+                                                        stock_actual: stock_actual
+                                                    }, function (datos) {
                                                         $('#respuesta_delete').html(datos);
                                                     });
                                                 }

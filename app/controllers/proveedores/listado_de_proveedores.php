@@ -8,7 +8,7 @@
  * Fecha: 2025-09-10
  */
 
-include('../../config.php'); // Importa configuración principal y PDO
+
 
 /* --------------------------------------------------------------------------
    🔹 Consulta SQL para obtener todos los proveedores

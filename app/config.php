@@ -79,7 +79,7 @@ try {
  * IMPORTANTE: cambiar en producción al dominio real.
  * @var string
  */
-$URL = "http://localhost/sistemasv2";
+$URL = "http://localhost/sistema";
 
 /**
  * Configuración de la zona horaria del sistema.
