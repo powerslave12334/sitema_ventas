@@ -5,7 +5,7 @@ include('../layout/sesion.php');
 include('../layout/parte1.php');
 
 
-include('../app/controllers/usuarios/listado_de_usuarios.php');
+include('../app/controllers/usuarios/listado_de_usaurios.php');
 
 
 ?>
